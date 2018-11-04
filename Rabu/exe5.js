@@ -1,8 +1,9 @@
 function palindrome(kata) {
-	var tampung ="";
-	for(i = 0; i< kata.length ; i++){
-		tampung= kata[i]+tampung;
+	var tampung ='';
+	for(var i = kata.length-1; i>=0 ; i--){
+		tampung += kata[i];
 	}
+	console.log(tampung);
 	if (tampung === kata) {
 		return true;
 	}else return false;

@@ -5,30 +5,28 @@
 
 // Code
 function targetTerdekat(arr) {
-  var cekO = 0;
-  var cekX = 0;
-  var tampungX = 0 ;
-  for(var i = 0 ; i < arr.length ; i++)
-  {
-  	if(arr[i] === "o")
-  	{
-  		cekO = cekO+i;
-  	}
+  var posisiO = 0;
+  var posisiX = 0;
+  var jarak_terdekat_sementara = arr.length;
+  for(var i =0 ; i < arr.length ; i++){
+    if(arr[i] === "o"){
+      posisiO = posisiO + i;
+    }
   }
-  
-  for(var j = 0 ; j < arr.length ; j++)
-  {
-  	if(arr[j] === "x" && arr[j+1]=== " ")
-  	{
-  		cekX = cekX+j;
-  		
-   	}
-  // 
+  for(var j = 0 ; j < arr.length ; j++){
+    if(arr[j] === "x"){
+      posisiX = posisiX + j;
+      var jarak = Math.abs(posisiO - posisiX);
+      posisiX = 0;
+    }
+    if (jarak_terdekat_sementara > jarak) {
+      jarak_terdekat_sementara = jarak;
+    }  
   }
-  return tampungX = cekX-cekO
-  // console.log(arr.length)
-
-  
+  if(arr.indexOf("x")<0){
+      return jarak_terdekat_sementara = 0;
+    }
+  return jarak_terdekat_sementara;
 }
 
 // TEST CASES

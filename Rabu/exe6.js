@@ -1,18 +1,14 @@
 function angkaPalindrome(num) {
-  for(i=1; 1 ; i++)
+  for(var i=1; 1 ; i++)
   {	num = num + 1;
   	var simpan = "";
   	var stringNum = String(num);
-  	for(j=0; j<stringNum.length;j++){
+  	for(var j=0; j<stringNum.length;j++){
   		simpan = stringNum[j] + simpan ;
   	}
-  	// console.log(stringNum);
   	if (Number(simpan)===num) {
   		return num;
   	}
-
-  	
-  	// console.log(simpan);
   }
 }
 

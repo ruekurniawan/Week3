@@ -9,7 +9,7 @@ function pasanganTerbesar(num) {
     if(simpan[j] > tampung){
       tampung = simpan[j];
     }
-  }return tampung;
+  }return Number(tampung);
 }
 
 // TEST CASES
